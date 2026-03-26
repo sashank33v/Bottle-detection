@@ -1,0 +1,7 @@
+Dataset Source: Roboflow Universe
+Link: https://app.roboflow.com/jonnadas-workspace-m5dgy/water-bottle-detection-b9fu2/browse
+
+Classes: plastic_bottle, steel_bottle
+Total Images: 315
+Train: 250 | Val: 26 | Test: 39
+Annotation Format: YOLOv8 Bounding Boxes
