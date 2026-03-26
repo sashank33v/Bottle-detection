@@ -143,8 +143,8 @@ model.train(
 ## 1. Clone Repository
 
 ```bash
-git clone https://github.com/JonnadaRaju/Real-Time-Bottle-Detection.git
-cd Real-Time-Bottle-Detection
+git clone git@github.com:sashank33v/Bottle-detection.git
+cd Bottle-detection.git
 ```
 
 ## 2. Install Dependencies
