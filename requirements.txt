@@ -1,0 +1,4 @@
+ultralytics
+gradio
+huggingface_hub
+Pillow
