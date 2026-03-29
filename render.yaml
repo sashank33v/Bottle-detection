@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: bottle-detection
+    runtime: docker
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: 7860
+      - key: YOLO_CONFIG_DIR
+        value: /tmp/Ultralytics
+

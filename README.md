@@ -234,7 +234,7 @@ The metadata block at the top of this `README.md` is already compatible with Spa
 
 ## Docker Fallback For Render / Railway / VPS
 
-The repo now also includes a `Dockerfile`, so it can run on any container-based host if you do not want to use Spaces.
+The repo now also includes production container config for generic hosts, which is the best fallback when Spaces scheduling is unreliable.
 
 Build and run locally:
 
@@ -244,6 +244,22 @@ docker run -p 7860:7860 bottle-detection
 ```
 
 The app binds to `0.0.0.0` and reads the `PORT` environment variable, so it works on platforms such as Render and Railway without code changes.
+
+## Render
+
+This repo includes `render.yaml` and can be deployed as a Docker web service.
+
+- Root directory: repository root
+- Runtime: Docker
+- Health check path: `/`
+
+## Railway
+
+This repo includes `railway.json` and works with the included `Dockerfile`.
+
+- Service type: Docker
+- Start command: provided by `Dockerfile`
+- Port: provided through the `PORT` environment variable
 
 ---
 
