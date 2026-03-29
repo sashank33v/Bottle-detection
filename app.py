@@ -3,11 +3,12 @@ from ultralytics import YOLO
 from PIL import Image
 from huggingface_hub import hf_hub_download
 
+
 model_path = hf_hub_download(
-    repo_id="sashank33v/bottle-detection",
+    repo_id="sashank33/bottle_detection_app",
     filename="best.pt"
 )
-)
+
 model = YOLO(model_path)
 
 
