@@ -13,7 +13,9 @@ model = YOLO(model_path)
 def detect_bottles(image):
     results = model(image)
     result_image = results[0].plot()
-    return Image.fromarray(result_image)
+import cv2
+
+return Image.fromarray(cv2.cvtColor(result_image, cv2.COLOR_BGR2RGB))
 
 demo = gr.Interface(
     fn=detect_bottles,
