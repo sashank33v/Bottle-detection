@@ -3,6 +3,9 @@ from pathlib import Path
 
 import gradio as gr
 from PIL import Image
+
+os.environ.setdefault("YOLO_CONFIG_DIR", "/tmp/Ultralytics")
+
 from ultralytics import YOLO
 
 MODEL_PATH = Path("models/best.pt")
@@ -39,4 +42,5 @@ if __name__ == "__main__":
     demo.queue().launch(
         server_name="0.0.0.0",
         server_port=int(os.getenv("PORT", "7860")),
+        ssr_mode=False,
     )
