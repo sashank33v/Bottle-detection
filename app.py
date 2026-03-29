@@ -24,4 +24,9 @@ demo = gr.Interface(
     description="Upload an image to detect bottles using YOLOv8"
 )
 
-demo.launch()
+import os
+
+demo.launch(
+    server_name="0.0.0.0",
+    server_port=int(os.environ.get("PORT", 7860))
+)
