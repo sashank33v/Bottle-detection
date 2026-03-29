@@ -11,11 +11,9 @@ model_path = hf_hub_download(
 model = YOLO(model_path)
 
 def detect_bottles(image):
-    results = model(image)
+    results = model(image, imgsz=320)  # reduce size
     result_image = results[0].plot()
-import cv2
-
-return Image.fromarray(cv2.cvtColor(result_image, cv2.COLOR_BGR2RGB))
+    return Image.fromarray(cv2.cvtColor(result_image, cv2.COLOR_BGR2RGB))
 
 demo = gr.Interface(
     fn=detect_bottles,
