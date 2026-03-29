@@ -1,0 +1,12 @@
+.git
+.gitignore
+.hfignore
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/
+venv/
+notebooks/
+dataset/
+CNAME
+

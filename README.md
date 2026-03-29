@@ -1,3 +1,15 @@
+---
+title: Bottle Detection
+emoji: 🍾
+colorFrom: blue
+colorTo: green
+sdk: gradio
+python_version: "3.10"
+sdk_version: "6.10.0"
+app_file: app.py
+pinned: false
+---
+
 # 🍶 Real-Time-Bottle-Detection using YOLOv8
 
 <div align="center">
@@ -196,6 +208,42 @@ model.predict(
     conf=0.5
 )
 ```
+
+---
+
+# 🌐 Deployment
+
+## Best Option: Hugging Face Spaces
+
+This repo is already structured for a **Gradio Space**, which is the cleanest deployment target for a small computer-vision demo:
+
+- Native support for Gradio apps
+- Simple model-file hosting directly in the repo
+- Free public hosting for demos
+- No custom web server setup needed
+
+### Deploy Steps
+
+1. Create a new **Hugging Face Space**
+2. Select **Gradio SDK**
+3. Upload this repository
+4. Keep `app.py` as the entrypoint
+5. Ensure `requirements.txt` is included
+
+The metadata block at the top of this `README.md` is already compatible with Spaces.
+
+## Docker Fallback For Render / Railway / VPS
+
+The repo now also includes a `Dockerfile`, so it can run on any container-based host if you do not want to use Spaces.
+
+Build and run locally:
+
+```bash
+docker build -t bottle-detection .
+docker run -p 7860:7860 bottle-detection
+```
+
+The app binds to `0.0.0.0` and reads the `PORT` environment variable, so it works on platforms such as Render and Railway without code changes.
 
 ---
 
