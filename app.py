@@ -7,6 +7,7 @@ model_path = hf_hub_download(
     repo_id="sashank33v/bottle-detection",
     filename="best.pt"
 )
+)
 model = YOLO(model_path)
 
 
